@@ -1,0 +1,18 @@
+{
+  "name": "ai-document-summarizer",
+  "version": "1.0.0",
+  "description": "AI-Powered Document Summarizer",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm start",
+    "client": "cd client && npm run dev",
+    "install-deps": "npm install && cd server && npm install && cd ../client && npm install"
+  },
+  "keywords": ["ai", "document", "summarizer", "nlp"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
