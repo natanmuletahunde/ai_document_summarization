@@ -75,6 +75,46 @@ This will start both the frontend (port 3000) and backend (port 5000) simultaneo
 - MongoDB installed and running
 - npm or yarn package manager
 
+## 🚀 **Deployment**
+
+### **Quick Start (Recommended)**
+- **Railway**: Easiest deployment with free tier - [See Guide](./DEPLOYMENT.md)
+- **Vercel**: Great for frontend with serverless - [See Guide](./DEPLOYMENT.md)
+- **Heroku**: Popular choice with good documentation
+- **Docker**: Full control for any cloud provider
+
+### **Platform-Specific Guides**
+- 🌟 [Render Deployment (Recommended)](./RENDER_DEPLOYMENT.md)
+- 📖 [Complete Deployment Guide](./DEPLOYMENT.md)
+- 🔧 [Troubleshooting](./TROUBLESHOOTING.md) 
+- 🎤 [Voice Reader Feature Guide](./VOICE_GUIDE.md)
+
+### **Quick Deploy Options**
+
+#### 🌟 **Render (Recommended Modern Platform - 5 Minutes)**
+```bash
+# 1. Run the helper script
+./deploy-render.sh
+
+# 2. Go to dashboard.render.com → New Service
+# 3. Configure backend + frontend as separate services
+# 4. Set MongoDB connection string
+# 5. Deploy! 🌟
+```
+
+#### 🚂 **Railway (Easiest - 5 Minutes)**
+```bash
+# 1. Push to GitHub
+git add . && git commit -m "Ready for deployment"
+git push origin main
+
+# 2. Go to railway.app → New Project → Deploy from GitHub
+# 3. Set environment variables:
+#    MONGO_URI=your-mongodb-connection-string
+#    NODE_ENV=production
+# 4. Deploy! 🚂
+```
+
 ## API Endpoints
 
 - `POST /api/summarize` - Upload and summarize document
