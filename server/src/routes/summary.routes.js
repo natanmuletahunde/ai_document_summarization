@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const multer = require('multer');
+const multer = require('multer');  //  used for upload  files in the database
 const {
   uploadAndSummarize,
   getAllSummaries,
@@ -20,8 +20,8 @@ const upload = multer({
       'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
       'text/plain'
     ];
-    
-    if (allowedTypes.includes(file.mimetype)) {
+
+    if (allowedTypes.includes(file.mimetype)) {   // the MIME Types is used to answer the nature and format of a document or what type od file is upload.
       cb(null, true);
     } else {
       cb(new Error('Invalid file type. Only PDF, DOCX, and TXT files are allowed.'));

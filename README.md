@@ -81,7 +81,7 @@ This will start both the frontend (port 3000) and backend (port 5000) simultaneo
 - **Railway**: Easiest deployment with free tier - [See Guide](./DEPLOYMENT.md)
 - **Vercel**: Great for frontend with serverless - [See Guide](./DEPLOYMENT.md)
 - **Heroku**: Popular choice with good documentation
-- **Docker**: Full control for any cloud provider
+
 
 ### **Platform-Specific Guides**
 - 🌟 [Render Deployment (Recommended)](./RENDER_DEPLOYMENT.md)

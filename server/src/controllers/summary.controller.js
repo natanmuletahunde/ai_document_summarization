@@ -11,16 +11,16 @@ const uploadAndSummarize = async (req, res) => {
     }
 
     const { summaryLength = 'medium' } = req.body;
-    
+
     const originalText = await extractTextFromFile(req.file);
-    
+
     if (!originalText || originalText.trim().length === 0) {
       return res.status(400).json({ error: 'Unable to extract text from file' });
     }
 
     const summaryText = generateSummary(originalText, summaryLength);
     const sentiment = analyzeSentiment(originalText);
-    
+
     const summary = new Summary({
       title: req.file.originalname,
       originalText,
@@ -48,7 +48,7 @@ const getAllSummaries = async (req, res) => {
     const summaries = await Summary.find()
       .select('title summaryText sentiment createdAt')
       .sort({ createdAt: -1 });
-    
+
     res.json(summaries);
   } catch (error) {
     console.error('Error in getAllSummaries:', error);
@@ -59,7 +59,7 @@ const getAllSummaries = async (req, res) => {
 const getSummaryById = async (req, res) => {
   try {
     const summary = await Summary.findById(req.params.id);
-    
+
     if (!summary) {
       return res.status(404).json({ error: 'Summary not found' });
     }
@@ -74,7 +74,7 @@ const getSummaryById = async (req, res) => {
 const deleteSummary = async (req, res) => {
   try {
     const summary = await Summary.findByIdAndDelete(req.params.id);
-    
+
     if (!summary) {
       return res.status(404).json({ error: 'Summary not found' });
     }
@@ -89,15 +89,15 @@ const deleteSummary = async (req, res) => {
 const exportSummary = async (req, res) => {
   try {
     const summary = await Summary.findById(req.params.id);
-    
+
     if (!summary) {
       return res.status(404).json({ error: 'Summary not found' });
     }
 
     const pdfBuffer = await generatePDF(summary.summaryText, `Summary of ${summary.title}`);
-    
+
     res.setHeader('Content-Type', 'application/pdf');
-    res.setHeader('Content-Disposition', `attachment; filename="${summary.title}_summary.pdf"`);
+    res.setHeader('Content-Disposition', `attachment; filename="${summary.title}_summary.pdf"`);  // forcely to download the summary file  and give title name for the summary file 
     res.send(pdfBuffer);
   } catch (error) {
     console.error('Error in exportSummary:', error);

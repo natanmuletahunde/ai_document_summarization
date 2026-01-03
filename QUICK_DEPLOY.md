@@ -23,10 +23,7 @@ git push origin main
 - Cost: Free tier available
 - Setup: `npm i -g heroku && heroku create`
 
-### **Docker** (Self-hosted)
-- Best for: Full control, any cloud provider
-- Cost: Depends on hosting (DigitalOcean, AWS)
-- Setup: `docker-compose up -d`
+
 
 ## 📋 **Required Setup**
 

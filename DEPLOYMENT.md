@@ -13,9 +13,8 @@ Complete deployment guide for your AI Document Summarizer with voice reader func
 
 ### Option 1: Render (Recommended Modern Platform)
 ### Option 2: Railway (Easiest)
-### Option 2: Heroku (Popular Choice)  
-### Option 3: Vercel (Frontend Focus)
-### Option 4: Docker (Full Control)
+### Option 3: Heroku (Popular Choice)  
+### Option 4: Vercel (Frontend Focus)
 ### Option 5: AWS (Enterprise)
 
 ---
@@ -148,63 +147,11 @@ Complete deployment guide for your AI Document Summarizer with voice reader func
 
 ---
 
-## 🐳 **Option 4: Docker Deployment (Full Control)**
 
-### Why Docker?
-- ✅ Consistent environments
-- ✅ Easy scaling
-- ✅ Works with any cloud provider
-- ✅ Great for microservices
-
-### Local Testing:
-```bash
-# Build and run with Docker Compose
-docker-compose -f docker-compose.yml up --build
-```
-
-### Cloud Deployment (DigitalOcean/Droplet example):
-
-1. **Server Setup**
-   ```bash
-   # Update system
-   sudo apt update && sudo apt upgrade -y
-   
-   # Install Docker
-   curl -fsSL https://get.docker.com -o get-docker.sh
-   sudo sh get-docker.sh
-   
-   # Install Docker Compose
-   sudo curl -L "https://github.com/docker/compose/releases/download/v2.20.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-   sudo chmod +x /usr/local/bin/docker-compose
-   ```
-
-2. **Deploy Application**
-   ```bash
-   # Clone repository
-   git clone https://github.com/yourusername/ai-doc-sum.git
-   cd ai-doc-sum
-   
-   # Set environment variables
-   cp .env.docker .env
-   # Edit .env with your actual values
-   
-   # Start services
-   docker-compose up -d
-   ```
-
-3. **Setup Nginx/SSL**
-   ```bash
-   # Install Nginx
-   sudo apt install nginx -y
-   
-   # Setup SSL with Certbot
-   sudo apt install certbot python3-certbot-nginx -y
-   sudo certbot --nginx -d yourdomain.com
-   ```
 
 ---
 
-## ☁️ **Option 5: AWS Deployment (Enterprise)**
+## ☁️ **Option 4: AWS Deployment (Enterprise)**
 
 ### Services Used:
 - **EC2**: Application server
@@ -360,7 +307,7 @@ jobs:
 
 Choose your deployment option based on:
 - **Budget**: Railway/Vercel (free), AWS/Heroku (paid tiers)
-- **Technical Skill**: Railway/Vercel (easy), AWS/Docker (advanced)
+- **Technical Skill**: Railway/Vercel (easy), AWS (advanced)
 - **Scaling Needs**: Heroku/Railway (small-medium), AWS (enterprise)
 
 Good luck with your deployment! 🚀
