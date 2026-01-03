@@ -24,7 +24,7 @@ services:
     env: static
     repo: https://github.com/natanmuletahunde/ai_document_summarization
     rootDir: ""
-    buildCommand: cd client && npm install && npm run build
+    buildCommand: cd client && npm ci --only=production && NODE_ENV=production npm run build
     publishDir: client/dist
     envVars:
       - key: VITE_API_URL
