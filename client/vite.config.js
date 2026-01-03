@@ -5,7 +5,7 @@ import autoprefixer from 'autoprefixer'
 
 export default defineConfig({
   plugins: [react()],
-  base: process.env.NODE_ENV === 'production' ? '/ai-doc-sum/' : './',
+  base: '/ai-doc-sum/',
   server: {
     port: 3000,
     proxy: {
