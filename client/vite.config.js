@@ -2,9 +2,23 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from 'tailwindcss'
 import autoprefixer from 'autoprefixer'
+import { copyFileSync } from 'fs'
+import { resolve } from 'path'
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    {
+      name: 'copy-server',
+      closeBundle() {
+        // Copy server.js to dist folder
+        copyFileSync(
+          resolve(__dirname, 'server.js'),
+          resolve(__dirname, 'dist', 'server.js')
+        );
+      }
+    }
+  ],
   base: '/ai-doc-sum/',
   server: {
     port: 3000,
