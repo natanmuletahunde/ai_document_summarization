@@ -1,0 +1,31 @@
+# Render Configuration
+# This file tells Render how to build and deploy your application
+
+services:
+  # Backend API Service
+  - type: web
+    name: ai-doc-sum-api
+    env: node
+    repo: https://github.com/natanmuletahunde/ai_document_summarization
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: MONGO_URI
+        sync: false
+
+  # Frontend Static Site
+  - type: web
+    name: ai-doc-sum-frontend
+    env: static
+    repo: https://github.com/natanmuletahunde/ai_document_summarization
+    rootDir: client
+    buildCommand: npm run build
+    publishDir: dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://ai-doc-sum-api.onrender.com
