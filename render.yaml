@@ -21,11 +21,11 @@ services:
   # Frontend Static Site
   - type: web
     name: ai-doc-sum-frontend
-    env: static
+    env: node
     repo: https://github.com/natanmuletahunde/ai_document_summarization
     rootDir: ""
-    buildCommand: cd client && npm ci --only=production && NODE_ENV=production npm run build
-    publishDir: client/dist
+    buildCommand: cd client && npm ci --only=production && NODE_ENV=production npm run build && cd dist && npm install express
+    startCommand: cd client/dist && node server.js
     envVars:
       - key: VITE_API_URL
         value: https://ai-doc-sum-api.onrender.com
