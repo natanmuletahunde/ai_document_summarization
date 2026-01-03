@@ -1,9 +1,14 @@
-  ==> It looks like we don't have access to your repo, but we'll try to clone it anyway.
-==> Cloning from https://github.com/natanmuletahunde/ai_document_summarization
-==> Root directory "dist" does not exist. Verify the Root Directory configured in your service settings.
-builder.sh: line 51: cd: /opt/render/project/src/client/dist: No such file or direct   and 
+SOLUTION:
+Fixed the Render frontend deployment issue by updating render.yaml:
 
-3555ad5
-configure render deployment for client and server
-Exited with status 1 while building your code.
-Read our docs for common ways to troubleshoot your deploy. this happen when i try to   deploy the client side in the render   fix it please 
+BEFORE (Incorrect):
+rootDir: client
+buildCommand: npm run build
+publishDir: dist
+
+AFTER (Correct):
+rootDir: ""
+buildCommand: cd client && npm install && npm run build
+publishDir: client/dist
+
+The issue was that Render was looking for the client directory as the root, but the client directory is actually a subfolder within the repository root.   
