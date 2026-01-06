@@ -1,144 +1,266 @@
-# AI Document Summarizer
 
-An AI-driven web application that analyzes lengthy documents and generates concise summaries, performs sentiment analysis, and allows users to save and export results.
+# 🤖 AI Document Summarizer
 
-## Features
+An **AI-driven web application** that analyzes lengthy documents and generates **concise summaries**, performs **sentiment analysis**, and allows users to **save, manage, listen to, and export results** — all wrapped in a **futuristic AI SaaS UI**.
 
-- 📤 **Document Upload**: Support for PDF, DOCX, and TXT files with drag-and-drop
-- 🧾 **AI-Generated Summaries**: Extractive and abstractive summarization with adjustable length
-- 😊 **Sentiment Analysis**: Detect document tone (Positive, Neutral, Negative) with visual indicators
-- 🔊 **Voice Reader**: AI-powered text-to-speech with natural voice synthesis
-- 🎛️ **Voice Controls**: Play/pause/stop, voice selection, speed & pitch adjustment
-- 💾 **Save & Manage**: Store summaries in MongoDB with full CRUD operations
-- 📄 **Export Options**: Download summaries as PDF
-- 🎨 **Futuristic UI**: Premium glassmorphism design with AI SaaS aesthetics
-- ✨ **Micro-interactions**: Smooth animations, hover effects, and loading states
-- 🌙 **Dark Theme**: Eye-friendly dark interface with gradient accents
 
-## Tech Stack
+## 🌟 Application Preview
 
-### Frontend
-- React 18 with Vite
-- Tailwind CSS with custom futuristic theme
-- Inter font for modern typography
-- React Router for navigation
-- Axios for API requests
-- Chart.js for sentiment visualization
-- React Dropzone for file uploads
+> **Futuristic glassmorphism UI with AI-powered document understanding**
 
-### Backend
-- Node.js with Express.js
-- MongoDB with Mongoose ODM
-- Custom NLP processing algorithms
-- PDF & DOCX parsing libraries
-- PDFKit for PDF generation
+### 🏠 Home & Upload Interface
 
-### UI Design System
-- **Color Scheme**: AI-focused gradients (Indigo to Cyan)
-- **Glassmorphism**: Backdrop blur effects with semi-transparent layers
-- **Typography**: Inter font family with clear hierarchy
-- **Animations**: Smooth transitions and micro-interactions
-- **Dark Theme**: Premium dark background with accent glows
+<img width="1920" height="1080" alt="Home Page" src="https://github.com/user-attachments/assets/63df3faa-71df-4082-aff9-054741e19f74" />
 
-### Voice Features
-- **Natural Speech**: Web Speech API for high-quality voice synthesis
-- **Multiple Voices**: Selection of different voice options and languages
-- **Playback Controls**: Play, pause, stop functionality
-- **Voice Settings**: Adjustable speed (0.5x-2x) and pitch controls
-- **Visual Feedback**: Real-time status indicators with animations
-- **Responsive Design**: Voice controls integrated seamlessly into glassmorphism UI
+### 🧠 AI Summary Generation View
 
-## Installation
+<img width="1920" height="1080" alt="Summary Generation" src="https://github.com/user-attachments/assets/cd31012d-e601-4a15-9111-a7fe9ce72c22" />
 
-1. Clone the repository
-2. Install dependencies for all packages:
-   ```bash
-   npm run install-deps
-   ```
+### 😊 Sentiment Analysis & Visualization
 
-3. Set up environment variables:
-   - Root `.env` file is already configured for MongoDB at `mongodb://localhost:27017/ai-document-summarizer`
-   - Server `.env` file is automatically configured
-   - Default port: 5000
+<img width="1920" height="1080" alt="Sentiment Analysis" src="https://github.com/user-attachments/assets/65021279-c385-4a9b-a591-f3053c343f7b" />
 
-4. Make sure MongoDB is running on your system
+### 🔊 Voice Reader & Saved Summaries Dashboard
 
-5. Start the application:
-   ```bash
-   npm run dev
-   ```
+<img width="1920" height="1080" alt="Voice Reader & Dashboard" src="https://github.com/user-attachments/assets/6a0f349d-d3f8-47bf-baf0-230e549da12d" />
 
-This will start both the frontend (port 3000) and backend (port 5000) simultaneously.
+---
+
+## ✨ Key Features
+
+* 📤 **Document Upload**
+
+  * Supports **PDF, DOCX, and TXT**
+  * Drag-and-drop interface with file validation
+
+* 🧾 **AI-Generated Summaries**
+
+  * Extractive & abstractive summarization
+  * Adjustable summary length
+  * Clean, readable output
+
+* 😊 **Sentiment Analysis**
+
+  * Detects **Positive / Neutral / Negative** tone
+  * Visualized using charts and indicators
+
+* 🔊 **AI Voice Reader**
+
+  * Natural text-to-speech
+  * Reads summaries aloud
+
+* 🎛️ **Advanced Voice Controls**
+
+  * Play / Pause / Stop
+  * Voice selection
+  * Speed (0.5x – 2x)
+  * Pitch adjustment
+
+* 💾 **Save & Manage Summaries**
+
+  * Stored securely in MongoDB
+  * Full **CRUD** support
+
+* 📄 **Export to PDF**
+
+  * Professionally formatted summaries
+  * One-click download
+
+* 🎨 **Futuristic UI**
+
+  * Glassmorphism
+  * AI SaaS-style gradients
+  * Micro-interactions & animations
+
+* 🌙 **Dark Theme**
+
+  * Eye-friendly premium dark UI
+  * Neon glow accents
+
+---
+
+## 🧠 How It Works (System Flow)
+
+1. User uploads a document
+2. Backend parses the file (PDF / DOCX / TXT)
+3. NLP engine processes text
+4. Summary + sentiment are generated
+5. Results are stored in MongoDB
+6. User can:
+
+   * Listen via voice reader
+   * Save summaries
+   * Export to PDF
+
+---
+
+## 🛠️ Tech Stack
+
+### 🔹 Frontend
+
+* React 18 (Vite)
+* Tailwind CSS (custom futuristic theme)
+* React Router
+* Axios
+* Chart.js (sentiment visualization)
+* React Dropzone
+* Inter Font
+
+### 🔹 Backend
+
+* Node.js
+* Express.js
+* MongoDB + Mongoose
+* Custom NLP logic
+* PDF & DOCX parsers
+* PDFKit (exporting summaries)
+
+---
+
+## 🎨 UI Design System
+
+* **Color Scheme**: Indigo → Cyan AI gradients
+* **Glassmorphism**: Backdrop blur + transparency
+* **Typography**: Inter font with strong hierarchy
+* **Animations**: Smooth transitions & hover effects
+* **Dark Theme**: Premium SaaS-style experience
+
+---
+
+## 🔊 Voice Reader Features
+
+* Web Speech API
+* Multiple voices & languages
+* Real-time playback controls
+* Speed & pitch adjustment
+* Animated visual feedback
+* Fully responsive UI integration
+
+---
+
+## 📦 Installation & Setup
 
 ### Prerequisites
-- Node.js (v18+ recommended)
-- MongoDB installed and running
-- npm or yarn package manager
 
-## 🚀 **Deployment**
+* Node.js (v18+ recommended)
+* MongoDB (running locally or cloud)
+* npm or yarn
 
-### **Quick Start (Recommended)**
-- **Railway**: Easiest deployment with free tier - [See Guide](./DEPLOYMENT.md)
-- **Vercel**: Great for frontend with serverless - [See Guide](./DEPLOYMENT.md)
-- **Heroku**: Popular choice with good documentation
+### Steps
 
+1. Clone the repository:
 
-### **Platform-Specific Guides**
-- 🌟 [Render Deployment (Recommended)](./RENDER_DEPLOYMENT.md)
-- 📖 [Complete Deployment Guide](./DEPLOYMENT.md)
-- 🔧 [Troubleshooting](./TROUBLESHOOTING.md) 
-- 🎤 [Voice Reader Feature Guide](./VOICE_GUIDE.md)
-
-### **Quick Deploy Options**
-
-#### 🌟 **Render (Recommended Modern Platform - 5 Minutes)**
 ```bash
-# 1. Run the helper script
-./deploy-render.sh
-
-# 2. Go to dashboard.render.com → New Service
-# 3. Configure backend + frontend as separate services
-# 4. Set MongoDB connection string
-# 5. Deploy! 🌟
+git clone https://github.com/your-username/ai-document-summarizer.git
+cd ai-document-summarizer
 ```
 
-#### 🚂 **Railway (Easiest - 5 Minutes)**
+2. Install all dependencies:
+
 ```bash
-# 1. Push to GitHub
-git add . && git commit -m "Ready for deployment"
+npm run install-deps
+```
+
+3. Environment Variables:
+
+* MongoDB default:
+
+```env
+mongodb://localhost:27017/ai-document-summarizer
+```
+
+* Backend port: `5000`
+* Frontend port: `3000`
+
+4. Start the app:
+
+```bash
+npm run dev
+```
+
+✔ Frontend → [http://localhost:3000](http://localhost:3000)
+✔ Backend → [http://localhost:5000](http://localhost:5000)
+
+---
+
+## 🚀 Deployment
+
+### 🌟 Recommended Platforms
+
+* **Render** (Best overall)
+* **Railway** (Easiest)
+* **Vercel** (Frontend)
+* **Heroku**
+
+### 🚂 Railway (5 Minutes)
+
+```bash
+git add .
+git commit -m "Ready for deployment"
 git push origin main
-
-# 2. Go to railway.app → New Project → Deploy from GitHub
-# 3. Set environment variables:
-#    MONGO_URI=your-mongodb-connection-string
-#    NODE_ENV=production
-# 4. Deploy! 🚂
 ```
 
-## API Endpoints
+Set:
 
-- `POST /api/summarize` - Upload and summarize document
-- `GET /api/summaries` - Fetch all saved summaries
-- `GET /api/summaries/:id` - Get summary details
-- `DELETE /api/summaries/:id` - Delete summary
-- `GET /api/export/:id` - Export summary as PDF
+```env
+MONGO_URI=your-mongodb-uri
+NODE_ENV=production
+```
 
-## Project Structure
+---
+
+## 🔗 API Endpoints
+
+| Method | Endpoint             | Description                 |
+| ------ | -------------------- | --------------------------- |
+| POST   | `/api/summarize`     | Upload & summarize document |
+| GET    | `/api/summaries`     | Get all summaries           |
+| GET    | `/api/summaries/:id` | Get summary by ID           |
+| DELETE | `/api/summaries/:id` | Delete summary              |
+| GET    | `/api/export/:id`    | Export summary as PDF       |
+
+---
+
+## 📁 Project Structure
 
 ```
 ai-document-summarizer/
-├── client/                 # Frontend (React)
+├── client/
 │   ├── src/
-│   │   ├── components/     # Reusable components
-│   │   ├── pages/         # Page components
-│   │   ├── services/      # API services
-│   │   └── hooks/         # Custom hooks
-├── server/                # Backend (Node.js + Express)
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   └── hooks/
+├── server/
 │   ├── src/
-│   │   ├── controllers/   # Route controllers
-│   │   ├── models/        # Database models
-│   │   ├── routes/        # API routes
-│   │   ├── services/      # Business logic
-│   │   └── utils/         # Utility functions
+│   │   ├── controllers/
+│   │   ├── models/
+│   │   ├── routes/
+│   │   ├── services/
+│   │   └── utils/
 └── README.md
 ```
+
+---
+
+## 🎯 Academic & Practical Value
+
+* Demonstrates **full-stack AI system**
+* Covers **NLP, UI/UX, databases, APIs**
+* Suitable for:
+
+  * Final year projects
+  * Research demos
+  * Portfolio showcase
+  * Startup MVP
+
+---
+
+If you want next:
+
+* ✅ **Advisor-level architecture diagram**
+* ✅ **System sequence diagram**
+* ✅ **UI/UX design justification**
+* ✅ **Project report (DOCX or PDF)**
+
+Just tell me 👍
